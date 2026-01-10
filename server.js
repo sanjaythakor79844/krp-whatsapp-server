@@ -33,19 +33,21 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw0Oh6ds0OaYo
 function initializeWhatsApp() {
   console.log('🚀 Initializing WhatsApp client...');
   
-  client = new Client({
+  const puppeteer = require('puppeteer');
+
+client = new Client({
   authStrategy: new LocalAuth(),
   puppeteer: {
     headless: true,
-    executablePath: process.env.CHROME_PATH || require('puppeteer').executablePath(),
+    executablePath: puppeteer.executablePath(), // use Puppeteer's own Chromium
     args: [
       '--no-sandbox',
       '--disable-setuid-sandbox',
       '--disable-dev-shm-usage',
-      '--disable-accelerated-2d-canvas',
-      '--no-first-run',
-      '--no-zygote',
       '--disable-gpu',
+      '--disable-extensions',
+      '--single-process',
+      '--no-zygote',
       '--window-size=800,600'
     ]
   }
