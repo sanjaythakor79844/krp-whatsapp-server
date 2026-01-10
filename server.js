@@ -32,8 +32,6 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw0Oh6ds0OaYo
 
 function initializeWhatsApp() {
   console.log('🚀 Initializing WhatsApp client...');
-  
-  const puppeteer = require('puppeteer');
 
 client = new Client({
   authStrategy: new LocalAuth(),

@@ -5,8 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js",
-    "postinstall": "npx puppeteer browsers install chrome"
+    "dev": "nodemon server.js"
   },
   "keywords": [
     "whatsapp",
